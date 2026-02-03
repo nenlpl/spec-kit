@@ -15,7 +15,10 @@ VERSION="$1"
 # Remove 'v' prefix from version for release title
 VERSION_NO_V=${VERSION#v}
 
+# Add Python wheel and source distribution to release
 gh release create "$VERSION" \
+  .genreleases/*.whl \
+  .genreleases/*.tar.gz \
   .genreleases/spec-kit-template-copilot-sh-"$VERSION".zip \
   .genreleases/spec-kit-template-copilot-ps-"$VERSION".zip \
   .genreleases/spec-kit-template-claude-sh-"$VERSION".zip \
