@@ -7,6 +7,21 @@ All notable changes to the Specify CLI and templates are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **New `/speckit.imagine` command**: Generate solution design documents from customer artifacts
+  - Analyzes PDFs, Word docs, images, and text files in `./solution-artifacts/`
+  - Creates solution designs with C4 Context and Container diagrams using Mermaid
+  - Asks up to 5 interactive clarifying questions for missing information
+  - Generates features with complete traceability to source artifacts or clarifications
+  - Auto-versions output files (solution-design.md → v2.md → v3.md)
+  - Features can be passed to `/speckit.specify` for detailed specification
+  - New template: `templates/solution-design-template.md`
+  - New command: `templates/commands/imagine.md`
+  - New scripts: `scripts/bash/setup-imagine.sh`, `scripts/powershell/setup-imagine.ps1`
+
 ## [0.0.22] - 2025-11-07
 
 - Support for VS Code/Copilot agents, and moving away from prompts to proper agents with hand-offs.

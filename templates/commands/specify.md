@@ -27,6 +27,29 @@ The text the user typed after `/speckit.specify` in the triggering message **is*
 
 Given that feature description, do this:
 
+0. **Check for Solution Design Integration** (if feature name matches a solution design feature):
+   - Check project root for `solution-design.md` or `solution-design-v*.md` files
+   - If found, parse the solution design document to extract feature sections
+   - Try to match the user's feature description to a feature name in the solution design (case-insensitive)
+   - If a match is found:
+     - Extract the feature's description, source reference, and assumptions
+     - Pre-populate the spec with this information:
+       - Add "Background" section below "Feature Overview" with:
+         ```markdown
+         ## Background
+         
+         This feature originates from solution design: [solution-design.md](../solution-design.md)
+         
+         **Original Description**: [Feature description from solution design]
+         
+         **Source**: [Artifact reference or clarification reference]
+         ```
+       - Include assumptions in the "Assumptions" section
+       - Add artifact links to the "References" section (if applicable)
+       - If feature came from clarification, include the original question/answer as context
+     - Continue with normal specification flow using this context
+   - If no match found or no solution design exists, proceed with step 1
+
 1. **Generate a concise short name** (2-4 words) for the branch:
    - Analyze the feature description and extract the most meaningful keywords
    - Create a 2-4 word short name that captures the essence of the feature

@@ -100,7 +100,17 @@ Use the **`/speckit.constitution`** command to create your project's governing p
 /speckit.constitution Create principles focused on code quality, testing standards, user experience consistency, and performance requirements
 ```
 
-### 3. Create the spec
+### 3. (Optional) Generate solution design from customer artifacts
+
+Use the **`/speckit.imagine`** command to analyze customer artifacts (PDFs, Word docs, images) and generate a solution design with architecture diagrams and feature list. Place artifacts in `./solution-artifacts/` first.
+
+```bash
+/speckit.imagine
+```
+
+This creates a `solution-design.md` with C4 diagrams and features traced to source artifacts. You can then create detailed specs for each feature using `/speckit.specify [feature-name]`.
+
+### 4. Create the spec
 
 Use the **`/speckit.specify`** command to describe what you want to build. Focus on the **what** and **why**, not the tech stack.
 
@@ -108,7 +118,7 @@ Use the **`/speckit.specify`** command to describe what you want to build. Focus
 /speckit.specify Build an application that can help me organize my photos in separate photo albums. Albums are grouped by date and can be re-organized by dragging and dropping on the main page. Albums are never in other nested albums. Within each album, photos are previewed in a tile-like interface.
 ```
 
-### 4. Create a technical implementation plan
+### 5. Create a technical implementation plan
 
 Use the **`/speckit.plan`** command to provide your tech stack and architecture choices.
 
@@ -116,7 +126,7 @@ Use the **`/speckit.plan`** command to provide your tech stack and architecture 
 /speckit.plan The application uses Vite with minimal number of libraries. Use vanilla HTML, CSS, and JavaScript as much as possible. Images are not uploaded anywhere and metadata is stored in a local SQLite database.
 ```
 
-### 5. Break down into tasks
+### 6. Break down into tasks
 
 Use **`/speckit.tasks`** to create an actionable task list from your implementation plan.
 
@@ -124,7 +134,7 @@ Use **`/speckit.tasks`** to create an actionable task list from your implementat
 /speckit.tasks
 ```
 
-### 6. Execute implementation
+### 7. Execute implementation
 
 Use **`/speckit.implement`** to execute all tasks and build your feature according to the plan.
 
@@ -253,6 +263,7 @@ Essential commands for the Spec-Driven Development workflow:
 | Command                 | Description                                                              |
 | ----------------------- | ------------------------------------------------------------------------ |
 | `/speckit.constitution` | Create or update project governing principles and development guidelines |
+| `/speckit.imagine`      | Generate solution design from customer artifacts with C4 diagrams        |
 | `/speckit.specify`      | Define what you want to build (requirements and user stories)            |
 | `/speckit.plan`         | Create technical implementation plans with your chosen tech stack        |
 | `/speckit.tasks`        | Generate actionable task lists for implementation                        |
@@ -393,7 +404,7 @@ Go to the project folder and run your AI agent. In our example, we're using `cla
 
 ![Bootstrapping Claude Code environment](./media/bootstrap-claude-code.gif)
 
-You will know that things are configured correctly if you see the `/speckit.constitution`, `/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, and `/speckit.implement` commands available.
+You will know that things are configured correctly if you see the `/speckit.constitution`, `/speckit.imagine`, `/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, and `/speckit.implement` commands available.
 
 The first step should be establishing your project's governing principles using the `/speckit.constitution` command. This helps ensure consistent decision-making throughout all subsequent development phases:
 
