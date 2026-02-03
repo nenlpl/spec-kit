@@ -15,10 +15,17 @@ VERSION="$1"
 # Remove 'v' prefix from version for release title
 VERSION_NO_V=${VERSION#v}
 
+# Collect Python wheel and source distribution files
+PYTHON_ASSETS=()
+for file in .genreleases/*.whl .genreleases/*.tar.gz; do
+  if [[ -f "$file" ]]; then
+    PYTHON_ASSETS+=("$file")
+  fi
+done
+
 # Add Python wheel and source distribution to release
 gh release create "$VERSION" \
-  .genreleases/*.whl \
-  .genreleases/*.tar.gz \
+  "${PYTHON_ASSETS[@]}" \
   .genreleases/spec-kit-template-copilot-sh-"$VERSION".zip \
   .genreleases/spec-kit-template-copilot-ps-"$VERSION".zip \
   .genreleases/spec-kit-template-claude-sh-"$VERSION".zip \
