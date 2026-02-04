@@ -6,11 +6,12 @@ artifact_count: 0
 last_updated: YYYY-MM-DD
 ---
 
-# [Solution Name] - Solution Design
+## [Solution Name] - Solution Design
 
 ## 1. Executive Summary
 
 [2-4 paragraphs describing:
+
 1. Problem Statement: What business need or pain point is being addressed?
 2. Solution Approach: High-level description of proposed solution
 3. Key Capabilities: 3-5 primary features or capabilities delivered
@@ -35,6 +36,7 @@ C4Context
 ```
 
 **Key Elements:**
+
 - **Actors**: [List primary actors (users, administrators, external systems) and their roles]
 - **System Boundary**: [Describe what is inside the solution vs external dependencies]
 - **External Integrations**: [List external systems and their purpose in the architecture]
@@ -62,11 +64,13 @@ C4Container
 ```
 
 **Key Components:**
+
 - **[Component Name]** ([Technology]): [Purpose and responsibilities]
 - **[Component Name]** ([Technology]): [Purpose and responsibilities]
 - **[Component Name]** ([Technology]): [Purpose and responsibilities]
 
 **Technology Stack:**
+
 - Frontend: [Technologies and frameworks]
 - Backend: [Technologies and frameworks]
 - Data: [Database and storage technologies]
@@ -81,6 +85,7 @@ C4Container
 **Source**: [artifact-file.pdf](solution-artifacts/artifact-file.pdf) - See page X, section "Section Name"
 
 **Assumptions**: (if applicable)
+
 - [Assumption about implementation or requirements]
 - [Assumption about integration or dependencies]
 
@@ -103,11 +108,13 @@ C4Container
 ## 4. Assumptions & Open Questions
 
 **Assumptions**:
+
 - [General assumptions made during solution design]
 - [Assumptions about technical constraints or requirements]
 - [Assumptions about integration points or external dependencies]
 
 **Open Questions**:
+
 - [Questions that need stakeholder clarification]
 - [Areas requiring further investigation]
 - [Decisions deferred to detailed specification phase]

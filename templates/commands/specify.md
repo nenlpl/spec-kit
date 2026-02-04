@@ -35,6 +35,7 @@ Given that feature description, do this:
      - Extract the feature's description, source reference, and assumptions
      - Pre-populate the spec with this information:
        - Add "Background" section below "Feature Overview" with:
+
          ```markdown
          ## Background
          
@@ -44,6 +45,7 @@ Given that feature description, do this:
          
          **Source**: [Artifact reference or clarification reference]
          ```
+
        - Include assumptions in the "Assumptions" section
        - Add artifact links to the "References" section (if applicable)
        - If feature came from clarification, include the original question/answer as context
