@@ -28,9 +28,11 @@ The `/speckit.imagine` command generates solution design documents from customer
    - Run `{SCRIPT}` from repo root to initialize environment and get artifact paths
    - Parse JSON output for `ARTIFACTS_DIR`, `ARTIFACT_FILES[]`, `OUTPUT_FILE`
    - If `./solution-artifacts/` doesn't exist or is empty, create folder and instruct user:
-     ```
+
+     ```text
      Created ./solution-artifacts/ folder. Please add your customer artifacts (PDF, DOCX, TXT, MD, images) and run /speckit.imagine again.
      ```
+
    - For single quotes in args, use escape syntax: e.g., 'I'\''m Groot' (or double-quote: "I'm Groot")
 
 2. **Artifact Processing Loop**:
@@ -41,16 +43,19 @@ The `/speckit.imagine` command generates solution design documents from customer
        - **DOCX**: Extract text from Word document
        - **TXT/MD**: Read directly as plain text
        - **Images** (PNG, JPG, JPEG): Attempt OCR/vision if available, otherwise skip with warning:
-         ```
+
+         ```text
          ⚠️ Image file [filename] skipped - OCR not available
          ```
+
      - Handle errors gracefully:
        - Corrupted files: Log error, continue with other files
        - Password-protected: Log "Unable to access password-protected file", continue
        - Unsupported format: Skip with warning listing supported formats
      - Track processing status for summary report
    - After all files processed, display summary:
-     ```
+
+     ```text
      Processed: 8/10 files successfully
      Failed: 2 files (see details above)
      ```
@@ -72,16 +77,17 @@ The `/speckit.imagine` command generates solution design documents from customer
      3. Data requirements
      4. Performance expectations
      5. User experience flow
-   - Generate up to 5 prioritized clarifying questions following these rules:
+   - Generate up to 30 prioritized clarifying questions following these rules:
      - **One question at a time** - wait for answer before next question
      - **Multiple-choice format** with 2-5 options plus short answer option
      - **Include recommendation** based on context (1-2 sentence rationale)
      - **Accept answer formats**: Option letter (A/B/C/D), "recommended", "suggested", or short answer (≤5 words)
      - **Sequential flow**: Present question, wait for response, validate answer, move to next
-     - **Stop conditions**: After 5 questions OR user says "done"/"stop"/"skip"
+     - **Stop conditions**: After 30 questions OR user says "done"/"stop"/"skip"
    - Track Q&A pairs with timestamps for traceability
    - **Question Example**:
-     ```
+
+     ```text
      Question 1 of 5: How should users authenticate?
      
      A) Username/password with optional MFA
@@ -107,20 +113,22 @@ The `/speckit.imagine` command generates solution design documents from customer
 
 6. **C4 Context Diagram Generation**:
    - Generate Mermaid C4Context diagram code:
-     - Include 3-7 actors (Person/Person_Ext)
-     - Include 5-10 systems (System/System_Ext)
+     - Include actors (Person/Person_Ext)
+     - Include systems (System/System_Ext)
      - Define relationships showing interactions
      - Use Enterprise_Boundary if multiple systems within organization
    - **Validate diagram** using `mermaid-diagram-validator` before writing
    - If validation fails, use placeholder with TODO note:
+
      ```markdown
      ⚠️ **Note**: Diagram validation failed. This is a placeholder - please review and complete manually.
      ```
+
    - Add description listing key elements, system boundary, external integrations
 
 7. **C4 Container Diagram Generation**:
    - Generate Mermaid C4Container diagram code:
-     - Include 5-15 containers with technology stack (3rd parameter)
+     - Include containers with technology stack (3rd parameter)
      - Use appropriate container types: Container, ContainerDb, ContainerQueue
      - Use Container_Boundary for solution boundary
      - Include external systems referenced
@@ -144,7 +152,7 @@ The `/speckit.imagine` command generates solution design documents from customer
 
 9. **Assumptions & Open Questions** (if applicable):
    - Document general assumptions made during design
-   - List open questions if information missing after 5 clarifications
+   - List open questions if information missing after 30 clarifications
    - Note areas requiring stakeholder validation
 
 10. **Auto-Versioning**:
@@ -171,7 +179,8 @@ The `/speckit.imagine` command generates solution design documents from customer
 
 12. **Completion Report**:
     - Display summary:
-      ```
+
+      ```text
       ✅ Solution design generated: solution-design.md
       
       📊 Summary:
