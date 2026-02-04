@@ -77,13 +77,13 @@ The `/speckit.imagine` command generates solution design documents from customer
      3. Data requirements
      4. Performance expectations
      5. User experience flow
-   - Generate up to 30 prioritized clarifying questions following these rules:
+   - Generate up to 20 prioritized clarifying questions following these rules:
      - **One question at a time** - wait for answer before next question
      - **Multiple-choice format** with 2-5 options plus short answer option
      - **Include recommendation** based on context (1-2 sentence rationale)
      - **Accept answer formats**: Option letter (A/B/C/D), "recommended", "suggested", or short answer (≤5 words)
      - **Sequential flow**: Present question, wait for response, validate answer, move to next
-     - **Stop conditions**: After 30 questions OR user says "done"/"stop"/"skip"
+     - **Stop conditions**: After 20 questions OR user says "done"/"stop"/"skip"
    - Track Q&A pairs with timestamps for traceability
    - **Question Example**:
 
@@ -152,7 +152,7 @@ The `/speckit.imagine` command generates solution design documents from customer
 
 9. **Assumptions & Open Questions** (if applicable):
    - Document general assumptions made during design
-   - List open questions if information missing after 30 clarifications
+   - List open questions if information missing after 20 clarifications
    - Note areas requiring stakeholder validation
 
 10. **Auto-Versioning**:
