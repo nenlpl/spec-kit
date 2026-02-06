@@ -139,7 +139,7 @@ The `/speckit.imagine` command generates solution design documents from customer
      - Technology stack breakdown (frontend, backend, data, infrastructure)
 
 8. **Feature Extraction with Traceability**:
-   - Generate features needed to deliver the solution approach and can be tied back to the generated Container diagram. Use the artifacts and clarifications. If the solution design calls for multiple phases, group the features by phase. 
+   - Generate features needed to deliver the solution approach and can be tied back to the generated Container diagram. Use the artifacts and clarifications. If the solution design calls for multiple phases, group the features by phase.
      - **Title**: Noun phrase (e.g., "User Authentication", "Real-time Analytics")
      - **Description**: 1-3 sentences, 50-300 characters, focus on user value. Identify which diagram container(s) are impactecd.
      - **Source**: MUST be one of:
